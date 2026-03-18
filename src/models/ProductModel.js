@@ -5,6 +5,7 @@ let productSchema = new mongoose.Schema({
   price: { type: Number, required: true },
   description: { type: String },
   category: { type: String, required: true },
+  image:{type: String}, 
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
 });
 
