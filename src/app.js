@@ -4,6 +4,7 @@ const connectDB = require("./configs/db");
 const signupRouter = require("./routes/signup");
 const loginRouter = require("./routes/login");
 const profileRouter = require("./routes/profile");
+const productRouter = require("./routes/Product");
 let app = express();
 let PORT = process.env.PORT || 3000;
 app.use(express.json());
@@ -16,6 +17,9 @@ app.get("/", (req, res) => {
 app.use("/api/signup", signupRouter);
 app.use("/api/login", loginRouter);
 app.use("/api/profile", profileRouter)
+app.use("/api/products", productRouter)
+
+
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`);
 });
